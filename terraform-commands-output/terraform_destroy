@@ -1,0 +1,630 @@
+$ terraform destroy
+module.sandbox_vpc.aws_vpc.application_vpc: Refreshing state... [id=vpc-029a284863707e0bd]
+module.sandbox_vpc.aws_internet_gateway.internet_gw: Refreshing state... [id=igw-08fa7029952030997]
+module.sandbox_vpc.aws_subnet.public_subnets[2]: Refreshing state... [id=subnet-0fafffdb517341fec]
+module.sandbox_vpc.aws_subnet.private_subnets[0]: Refreshing state... [id=subnet-041cd785e45b2020a]
+module.sandbox_vpc.aws_subnet.private_subnets[2]: Refreshing state... [id=subnet-07fcb6c305fa33b0a]
+module.sandbox_vpc.aws_subnet.public_subnets[0]: Refreshing state... [id=subnet-0b5b6f81dc5445053]
+module.sandbox_vpc.aws_subnet.public_subnets[1]: Refreshing state... [id=subnet-07a126d2cb62837f1]
+module.sandbox_vpc.aws_subnet.private_subnets[1]: Refreshing state... [id=subnet-0561b16265ad6e837]
+module.sandbox_vpc.aws_route_table.public_rt: Refreshing state... [id=rtb-02b07799aaf047581]
+module.sandbox_vpc.aws_eip.nat_eip[2]: Refreshing state... [id=eipalloc-0477024d6497c0f00]
+module.sandbox_vpc.aws_eip.nat_eip[1]: Refreshing state... [id=eipalloc-077302dc362286c97]
+module.sandbox_vpc.aws_eip.nat_eip[0]: Refreshing state... [id=eipalloc-06b5dbcaff1726f32]
+module.sandbox_vpc.aws_route_table_association.public_rta[1]: Refreshing state... [id=rtbassoc-0598f1bf03c4edc0a]
+module.sandbox_vpc.aws_route_table_association.public_rta[2]: Refreshing state... [id=rtbassoc-079aae806402f298d]
+module.sandbox_vpc.aws_route_table_association.public_rta[0]: Refreshing state... [id=rtbassoc-073374bbea60d04cb]
+module.sandbox_vpc.aws_nat_gateway.nat_gw[2]: Refreshing state... [id=nat-08269e03428c2fa2b]
+module.sandbox_vpc.aws_nat_gateway.nat_gw[0]: Refreshing state... [id=nat-09c8daa48d95fb7ab]
+module.sandbox_vpc.aws_nat_gateway.nat_gw[1]: Refreshing state... [id=nat-0f1d1e8b3780a0007]
+module.sandbox_vpc.aws_route_table.lambda_function_rt[0]: Refreshing state... [id=rtb-0a45079319c33f918]
+module.sandbox_vpc.aws_route_table.lambda_function_rt[1]: Refreshing state... [id=rtb-02e9141785aeddfcf]
+module.sandbox_vpc.aws_route_table.lambda_function_rt[2]: Refreshing state... [id=rtb-0362cec7f5556310d]
+module.sandbox_vpc.aws_route_table_association.private_rta[2]: Refreshing state... [id=rtbassoc-009e6725ce9484abe]
+module.sandbox_vpc.aws_route_table_association.private_rta[1]: Refreshing state... [id=rtbassoc-0b06bb82857960718]
+module.sandbox_vpc.aws_route_table_association.private_rta[0]: Refreshing state... [id=rtbassoc-09be6173f18e6b318]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # module.sandbox_vpc.aws_eip.nat_eip[0] will be destroyed
+  - resource "aws_eip" "nat_eip" {
+      - allocation_id        = "eipalloc-06b5dbcaff1726f32" -> null
+      - association_id       = "eipassoc-0a306bc802c2dedf1" -> null
+      - domain               = "vpc" -> null
+      - id                   = "eipalloc-06b5dbcaff1726f32" -> null
+      - network_border_group = "us-east-1" -> null
+      - network_interface    = "eni-0932a0d632dfd938c" -> null
+      - private_dns          = "ip-172-33-10-155.ec2.internal" -> null
+      - private_ip           = "172.33.10.155" -> null
+      - public_dns           = "ec2-34-237-135-220.compute-1.amazonaws.com" -> null
+      - public_ip            = "34.237.135.220" -> null
+      - public_ipv4_pool     = "amazon" -> null
+      - tags                 = {
+          - "Name" = "sandbox_nat_eip"
+        } -> null
+      - tags_all             = {
+          - "Name" = "sandbox_nat_eip"
+        } -> null
+      - vpc                  = true -> null
+    }
+
+  # module.sandbox_vpc.aws_eip.nat_eip[1] will be destroyed
+  - resource "aws_eip" "nat_eip" {
+      - allocation_id        = "eipalloc-077302dc362286c97" -> null
+      - association_id       = "eipassoc-00f34c03529d09a47" -> null
+      - domain               = "vpc" -> null
+      - id                   = "eipalloc-077302dc362286c97" -> null
+      - network_border_group = "us-east-1" -> null
+      - network_interface    = "eni-00fea19e5ed5c7b6b" -> null
+      - private_dns          = "ip-172-33-20-151.ec2.internal" -> null
+      - private_ip           = "172.33.20.151" -> null
+      - public_dns           = "ec2-34-233-166-114.compute-1.amazonaws.com" -> null
+      - public_ip            = "34.233.166.114" -> null
+      - public_ipv4_pool     = "amazon" -> null
+      - tags                 = {
+          - "Name" = "sandbox_nat_eip"
+        } -> null
+      - tags_all             = {
+          - "Name" = "sandbox_nat_eip"
+        } -> null
+      - vpc                  = true -> null
+    }
+
+  # module.sandbox_vpc.aws_eip.nat_eip[2] will be destroyed
+  - resource "aws_eip" "nat_eip" {
+      - allocation_id        = "eipalloc-0477024d6497c0f00" -> null
+      - association_id       = "eipassoc-0da1c54618447dadd" -> null
+      - domain               = "vpc" -> null
+      - id                   = "eipalloc-0477024d6497c0f00" -> null
+      - network_border_group = "us-east-1" -> null
+      - network_interface    = "eni-073d1c3a704b53624" -> null
+      - private_dns          = "ip-172-33-30-174.ec2.internal" -> null
+      - private_ip           = "172.33.30.174" -> null
+      - public_dns           = "ec2-54-156-139-93.compute-1.amazonaws.com" -> null
+      - public_ip            = "54.156.139.93" -> null
+      - public_ipv4_pool     = "amazon" -> null
+      - tags                 = {
+          - "Name" = "sandbox_nat_eip"
+        } -> null
+      - tags_all             = {
+          - "Name" = "sandbox_nat_eip"
+        } -> null
+      - vpc                  = true -> null
+    }
+
+  # module.sandbox_vpc.aws_internet_gateway.internet_gw will be destroyed
+  - resource "aws_internet_gateway" "internet_gw" {
+      - arn      = "arn:aws:ec2:us-east-1:182856634920:internet-gateway/igw-08fa7029952030997" -> null
+      - id       = "igw-08fa7029952030997" -> null
+      - owner_id = "182856634920" -> null
+      - tags     = {
+          - "Name" = "sandbox_internet_gw"
+        } -> null
+      - tags_all = {
+          - "Name" = "sandbox_internet_gw"
+        } -> null
+      - vpc_id   = "vpc-029a284863707e0bd" -> null
+    }
+
+  # module.sandbox_vpc.aws_nat_gateway.nat_gw[0] will be destroyed
+  - resource "aws_nat_gateway" "nat_gw" {
+      - allocation_id                      = "eipalloc-06b5dbcaff1726f32" -> null
+      - association_id                     = "eipassoc-0a306bc802c2dedf1" -> null
+      - connectivity_type                  = "public" -> null
+      - id                                 = "nat-09c8daa48d95fb7ab" -> null
+      - network_interface_id               = "eni-0932a0d632dfd938c" -> null
+      - private_ip                         = "172.33.10.155" -> null
+      - public_ip                          = "34.237.135.220" -> null
+      - secondary_allocation_ids           = [] -> null
+      - secondary_private_ip_address_count = 0 -> null
+      - secondary_private_ip_addresses     = [] -> null
+      - subnet_id                          = "subnet-0b5b6f81dc5445053" -> null
+      - tags                               = {
+          - "Name" = "sandbox_nat_gw"
+        } -> null
+      - tags_all                           = {
+          - "Name" = "sandbox_nat_gw"
+        } -> null
+    }
+
+  # module.sandbox_vpc.aws_nat_gateway.nat_gw[1] will be destroyed
+  - resource "aws_nat_gateway" "nat_gw" {
+      - allocation_id                      = "eipalloc-077302dc362286c97" -> null
+      - association_id                     = "eipassoc-00f34c03529d09a47" -> null
+      - connectivity_type                  = "public" -> null
+      - id                                 = "nat-0f1d1e8b3780a0007" -> null
+      - network_interface_id               = "eni-00fea19e5ed5c7b6b" -> null
+      - private_ip                         = "172.33.20.151" -> null
+      - public_ip                          = "34.233.166.114" -> null
+      - secondary_allocation_ids           = [] -> null
+      - secondary_private_ip_address_count = 0 -> null
+      - secondary_private_ip_addresses     = [] -> null
+      - subnet_id                          = "subnet-07a126d2cb62837f1" -> null
+      - tags                               = {
+          - "Name" = "sandbox_nat_gw"
+        } -> null
+      - tags_all                           = {
+          - "Name" = "sandbox_nat_gw"
+        } -> null
+    }
+
+  # module.sandbox_vpc.aws_nat_gateway.nat_gw[2] will be destroyed
+  - resource "aws_nat_gateway" "nat_gw" {
+      - allocation_id                      = "eipalloc-0477024d6497c0f00" -> null
+      - association_id                     = "eipassoc-0da1c54618447dadd" -> null
+      - connectivity_type                  = "public" -> null
+      - id                                 = "nat-08269e03428c2fa2b" -> null
+      - network_interface_id               = "eni-073d1c3a704b53624" -> null
+      - private_ip                         = "172.33.30.174" -> null
+      - public_ip                          = "54.156.139.93" -> null
+      - secondary_allocation_ids           = [] -> null
+      - secondary_private_ip_address_count = 0 -> null
+      - secondary_private_ip_addresses     = [] -> null
+      - subnet_id                          = "subnet-0fafffdb517341fec" -> null
+      - tags                               = {
+          - "Name" = "sandbox_nat_gw"
+        } -> null
+      - tags_all                           = {
+          - "Name" = "sandbox_nat_gw"
+        } -> null
+    }
+
+  # module.sandbox_vpc.aws_route_table.lambda_function_rt[0] will be destroyed
+  - resource "aws_route_table" "lambda_function_rt" {
+      - arn              = "arn:aws:ec2:us-east-1:182856634920:route-table/rtb-0a45079319c33f918" -> null
+      - id               = "rtb-0a45079319c33f918" -> null
+      - owner_id         = "182856634920" -> null
+      - propagating_vgws = [] -> null
+      - route            = [
+          - {
+              - carrier_gateway_id         = ""
+              - cidr_block                 = "0.0.0.0/0"
+              - core_network_arn           = ""
+              - destination_prefix_list_id = ""
+              - egress_only_gateway_id     = ""
+              - gateway_id                 = ""
+              - ipv6_cidr_block            = ""
+              - local_gateway_id           = ""
+              - nat_gateway_id             = "nat-09c8daa48d95fb7ab"
+              - network_interface_id       = ""
+              - transit_gateway_id         = ""
+              - vpc_endpoint_id            = ""
+              - vpc_peering_connection_id  = ""
+            },
+        ] -> null
+      - tags             = {
+          - "Name" = "sandbox_lambda_function_rt_a"
+        } -> null
+      - tags_all         = {
+          - "Name" = "sandbox_lambda_function_rt_a"
+        } -> null
+      - vpc_id           = "vpc-029a284863707e0bd" -> null
+    }
+
+  # module.sandbox_vpc.aws_route_table.lambda_function_rt[1] will be destroyed
+  - resource "aws_route_table" "lambda_function_rt" {
+      - arn              = "arn:aws:ec2:us-east-1:182856634920:route-table/rtb-02e9141785aeddfcf" -> null
+      - id               = "rtb-02e9141785aeddfcf" -> null
+      - owner_id         = "182856634920" -> null
+      - propagating_vgws = [] -> null
+      - route            = [
+          - {
+              - carrier_gateway_id         = ""
+              - cidr_block                 = "0.0.0.0/0"
+              - core_network_arn           = ""
+              - destination_prefix_list_id = ""
+              - egress_only_gateway_id     = ""
+              - gateway_id                 = ""
+              - ipv6_cidr_block            = ""
+              - local_gateway_id           = ""
+              - nat_gateway_id             = "nat-0f1d1e8b3780a0007"
+              - network_interface_id       = ""
+              - transit_gateway_id         = ""
+              - vpc_endpoint_id            = ""
+              - vpc_peering_connection_id  = ""
+            },
+        ] -> null
+      - tags             = {
+          - "Name" = "sandbox_lambda_function_rt_b"
+        } -> null
+      - tags_all         = {
+          - "Name" = "sandbox_lambda_function_rt_b"
+        } -> null
+      - vpc_id           = "vpc-029a284863707e0bd" -> null
+    }
+
+  # module.sandbox_vpc.aws_route_table.lambda_function_rt[2] will be destroyed
+  - resource "aws_route_table" "lambda_function_rt" {
+      - arn              = "arn:aws:ec2:us-east-1:182856634920:route-table/rtb-0362cec7f5556310d" -> null
+      - id               = "rtb-0362cec7f5556310d" -> null
+      - owner_id         = "182856634920" -> null
+      - propagating_vgws = [] -> null
+      - route            = [
+          - {
+              - carrier_gateway_id         = ""
+              - cidr_block                 = "0.0.0.0/0"
+              - core_network_arn           = ""
+              - destination_prefix_list_id = ""
+              - egress_only_gateway_id     = ""
+              - gateway_id                 = ""
+              - ipv6_cidr_block            = ""
+              - local_gateway_id           = ""
+              - nat_gateway_id             = "nat-08269e03428c2fa2b"
+              - network_interface_id       = ""
+              - transit_gateway_id         = ""
+              - vpc_endpoint_id            = ""
+              - vpc_peering_connection_id  = ""
+            },
+        ] -> null
+      - tags             = {
+          - "Name" = "sandbox_lambda_function_rt_c"
+        } -> null
+      - tags_all         = {
+          - "Name" = "sandbox_lambda_function_rt_c"
+        } -> null
+      - vpc_id           = "vpc-029a284863707e0bd" -> null
+    }
+
+  # module.sandbox_vpc.aws_route_table.public_rt will be destroyed
+  - resource "aws_route_table" "public_rt" {
+      - arn              = "arn:aws:ec2:us-east-1:182856634920:route-table/rtb-02b07799aaf047581" -> null
+      - id               = "rtb-02b07799aaf047581" -> null
+      - owner_id         = "182856634920" -> null
+      - propagating_vgws = [] -> null
+      - route            = [
+          - {
+              - carrier_gateway_id         = ""
+              - cidr_block                 = "0.0.0.0/0"
+              - core_network_arn           = ""
+              - destination_prefix_list_id = ""
+              - egress_only_gateway_id     = ""
+              - gateway_id                 = "igw-08fa7029952030997"
+              - ipv6_cidr_block            = ""
+              - local_gateway_id           = ""
+              - nat_gateway_id             = ""
+              - network_interface_id       = ""
+              - transit_gateway_id         = ""
+              - vpc_endpoint_id            = ""
+              - vpc_peering_connection_id  = ""
+            },
+        ] -> null
+      - tags             = {
+          - "Name" = "sandbox_public_rt"
+        } -> null
+      - tags_all         = {
+          - "Name" = "sandbox_public_rt"
+        } -> null
+      - vpc_id           = "vpc-029a284863707e0bd" -> null
+    }
+
+  # module.sandbox_vpc.aws_route_table_association.private_rta[0] will be destroyed
+  - resource "aws_route_table_association" "private_rta" {
+      - id             = "rtbassoc-09be6173f18e6b318" -> null
+      - route_table_id = "rtb-0a45079319c33f918" -> null
+      - subnet_id      = "subnet-041cd785e45b2020a" -> null
+    }
+
+  # module.sandbox_vpc.aws_route_table_association.private_rta[1] will be destroyed
+  - resource "aws_route_table_association" "private_rta" {
+      - id             = "rtbassoc-0b06bb82857960718" -> null
+      - route_table_id = "rtb-02e9141785aeddfcf" -> null
+      - subnet_id      = "subnet-0561b16265ad6e837" -> null
+    }
+
+  # module.sandbox_vpc.aws_route_table_association.private_rta[2] will be destroyed
+  - resource "aws_route_table_association" "private_rta" {
+      - id             = "rtbassoc-009e6725ce9484abe" -> null
+      - route_table_id = "rtb-0362cec7f5556310d" -> null
+      - subnet_id      = "subnet-07fcb6c305fa33b0a" -> null
+    }
+
+  # module.sandbox_vpc.aws_route_table_association.public_rta[0] will be destroyed
+  - resource "aws_route_table_association" "public_rta" {
+      - id             = "rtbassoc-073374bbea60d04cb" -> null
+      - route_table_id = "rtb-02b07799aaf047581" -> null
+      - subnet_id      = "subnet-0b5b6f81dc5445053" -> null
+    }
+
+  # module.sandbox_vpc.aws_route_table_association.public_rta[1] will be destroyed
+  - resource "aws_route_table_association" "public_rta" {
+      - id             = "rtbassoc-0598f1bf03c4edc0a" -> null
+      - route_table_id = "rtb-02b07799aaf047581" -> null
+      - subnet_id      = "subnet-07a126d2cb62837f1" -> null
+    }
+
+  # module.sandbox_vpc.aws_route_table_association.public_rta[2] will be destroyed
+  - resource "aws_route_table_association" "public_rta" {
+      - id             = "rtbassoc-079aae806402f298d" -> null
+      - route_table_id = "rtb-02b07799aaf047581" -> null
+      - subnet_id      = "subnet-0fafffdb517341fec" -> null
+    }
+
+  # module.sandbox_vpc.aws_subnet.private_subnets[0] will be destroyed
+  - resource "aws_subnet" "private_subnets" {
+      - arn                                            = "arn:aws:ec2:us-east-1:182856634920:subnet/subnet-041cd785e45b2020a" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "us-east-1a" -> null
+      - availability_zone_id                           = "use1-az2" -> null
+      - cidr_block                                     = "172.33.100.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-041cd785e45b2020a" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = false -> null
+      - owner_id                                       = "182856634920" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {
+          - "Name" = "sandbox_private_subnet_a"
+        } -> null
+      - tags_all                                       = {
+          - "Name" = "sandbox_private_subnet_a"
+        } -> null
+      - vpc_id                                         = "vpc-029a284863707e0bd" -> null
+    }
+
+  # module.sandbox_vpc.aws_subnet.private_subnets[1] will be destroyed
+  - resource "aws_subnet" "private_subnets" {
+      - arn                                            = "arn:aws:ec2:us-east-1:182856634920:subnet/subnet-0561b16265ad6e837" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "us-east-1b" -> null
+      - availability_zone_id                           = "use1-az4" -> null
+      - cidr_block                                     = "172.33.110.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-0561b16265ad6e837" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = false -> null
+      - owner_id                                       = "182856634920" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {
+          - "Name" = "sandbox_private_subnet_b"
+        } -> null
+      - tags_all                                       = {
+          - "Name" = "sandbox_private_subnet_b"
+        } -> null
+      - vpc_id                                         = "vpc-029a284863707e0bd" -> null
+    }
+
+  # module.sandbox_vpc.aws_subnet.private_subnets[2] will be destroyed
+  - resource "aws_subnet" "private_subnets" {
+      - arn                                            = "arn:aws:ec2:us-east-1:182856634920:subnet/subnet-07fcb6c305fa33b0a" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "us-east-1c" -> null
+      - availability_zone_id                           = "use1-az6" -> null
+      - cidr_block                                     = "172.33.120.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-07fcb6c305fa33b0a" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = false -> null
+      - owner_id                                       = "182856634920" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {
+          - "Name" = "sandbox_private_subnet_c"
+        } -> null
+      - tags_all                                       = {
+          - "Name" = "sandbox_private_subnet_c"
+        } -> null
+      - vpc_id                                         = "vpc-029a284863707e0bd" -> null
+    }
+
+  # module.sandbox_vpc.aws_subnet.public_subnets[0] will be destroyed
+  - resource "aws_subnet" "public_subnets" {
+      - arn                                            = "arn:aws:ec2:us-east-1:182856634920:subnet/subnet-0b5b6f81dc5445053" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "us-east-1a" -> null
+      - availability_zone_id                           = "use1-az2" -> null
+      - cidr_block                                     = "172.33.10.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-0b5b6f81dc5445053" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = true -> null
+      - owner_id                                       = "182856634920" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {
+          - "Name" = "sandbox_public_subnet_a"
+        } -> null
+      - tags_all                                       = {
+          - "Name" = "sandbox_public_subnet_a"
+        } -> null
+      - vpc_id                                         = "vpc-029a284863707e0bd" -> null
+    }
+
+  # module.sandbox_vpc.aws_subnet.public_subnets[1] will be destroyed
+  - resource "aws_subnet" "public_subnets" {
+      - arn                                            = "arn:aws:ec2:us-east-1:182856634920:subnet/subnet-07a126d2cb62837f1" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "us-east-1b" -> null
+      - availability_zone_id                           = "use1-az4" -> null
+      - cidr_block                                     = "172.33.20.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-07a126d2cb62837f1" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = true -> null
+      - owner_id                                       = "182856634920" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {
+          - "Name" = "sandbox_public_subnet_b"
+        } -> null
+      - tags_all                                       = {
+          - "Name" = "sandbox_public_subnet_b"
+        } -> null
+      - vpc_id                                         = "vpc-029a284863707e0bd" -> null
+    }
+
+  # module.sandbox_vpc.aws_subnet.public_subnets[2] will be destroyed
+  - resource "aws_subnet" "public_subnets" {
+      - arn                                            = "arn:aws:ec2:us-east-1:182856634920:subnet/subnet-0fafffdb517341fec" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "us-east-1c" -> null
+      - availability_zone_id                           = "use1-az6" -> null
+      - cidr_block                                     = "172.33.30.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-0fafffdb517341fec" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = true -> null
+      - owner_id                                       = "182856634920" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {
+          - "Name" = "sandbox_public_subnet_c"
+        } -> null
+      - tags_all                                       = {
+          - "Name" = "sandbox_public_subnet_c"
+        } -> null
+      - vpc_id                                         = "vpc-029a284863707e0bd" -> null
+    }
+
+  # module.sandbox_vpc.aws_vpc.application_vpc will be destroyed
+  - resource "aws_vpc" "application_vpc" {
+      - arn                                  = "arn:aws:ec2:us-east-1:182856634920:vpc/vpc-029a284863707e0bd" -> null
+      - assign_generated_ipv6_cidr_block     = false -> null
+      - cidr_block                           = "172.33.0.0/16" -> null
+      - default_network_acl_id               = "acl-09241a5371983a5a5" -> null
+      - default_route_table_id               = "rtb-0e5e6575ee8d0d029" -> null
+      - default_security_group_id            = "sg-08a8d3a4f1bd148b0" -> null
+      - dhcp_options_id                      = "dopt-01c907cdb17e0914d" -> null
+      - enable_dns_hostnames                 = true -> null
+      - enable_dns_support                   = true -> null
+      - enable_network_address_usage_metrics = false -> null
+      - id                                   = "vpc-029a284863707e0bd" -> null
+      - instance_tenancy                     = "default" -> null
+      - ipv6_netmask_length                  = 0 -> null
+      - main_route_table_id                  = "rtb-0e5e6575ee8d0d029" -> null
+      - owner_id                             = "182856634920" -> null
+      - tags                                 = {
+          - "Name" = "sandbox_application_vpc"
+        } -> null
+      - tags_all                             = {
+          - "Name" = "sandbox_application_vpc"
+        } -> null
+    }
+
+Plan: 0 to add, 0 to change, 24 to destroy.
+
+Changes to Outputs:
+  - private_subnets = {
+      - "0" = "subnet-041cd785e45b2020a"
+      - "1" = "subnet-0561b16265ad6e837"
+      - "2" = "subnet-07fcb6c305fa33b0a"
+    } -> null
+  - public_subnets  = {
+      - "0" = "subnet-0b5b6f81dc5445053"
+      - "1" = "subnet-07a126d2cb62837f1"
+      - "2" = "subnet-0fafffdb517341fec"
+    } -> null
+  - vpc_id          = [
+      - "vpc-029a284863707e0bd",
+    ] -> null
+╷
+│ Warning: Version constraints inside provider configuration blocks are deprecated
+│
+│   on provider.tf line 19, in provider "aws":
+│   19:   version             = ">= 2.46.0"
+│
+│ Terraform 0.13 and earlier allowed provider version constraints inside the provider configuration block, but that is now deprecated and will be removed 
+│ in a future version of Terraform. To silence this warning, move the provider version constraint into the required_providers block.
+╵
+
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: yes
+
+module.sandbox_vpc.aws_route_table_association.private_rta[0]: Destroying... [id=rtbassoc-09be6173f18e6b318]
+module.sandbox_vpc.aws_route_table_association.public_rta[0]: Destroying... [id=rtbassoc-073374bbea60d04cb]
+module.sandbox_vpc.aws_route_table_association.public_rta[2]: Destroying... [id=rtbassoc-079aae806402f298d]
+module.sandbox_vpc.aws_route_table_association.private_rta[1]: Destroying... [id=rtbassoc-0b06bb82857960718]
+module.sandbox_vpc.aws_route_table_association.private_rta[2]: Destroying... [id=rtbassoc-009e6725ce9484abe]
+module.sandbox_vpc.aws_route_table_association.public_rta[1]: Destroying... [id=rtbassoc-0598f1bf03c4edc0a]
+module.sandbox_vpc.aws_route_table_association.private_rta[0]: Destruction complete after 1s
+module.sandbox_vpc.aws_route_table_association.public_rta[0]: Destruction complete after 1s
+module.sandbox_vpc.aws_route_table_association.private_rta[2]: Destruction complete after 1s
+module.sandbox_vpc.aws_route_table_association.private_rta[1]: Destruction complete after 1s
+module.sandbox_vpc.aws_route_table_association.public_rta[1]: Destruction complete after 1s
+module.sandbox_vpc.aws_route_table.lambda_function_rt[0]: Destroying... [id=rtb-0a45079319c33f918]
+module.sandbox_vpc.aws_subnet.private_subnets[1]: Destroying... [id=subnet-0561b16265ad6e837]
+module.sandbox_vpc.aws_subnet.private_subnets[0]: Destroying... [id=subnet-041cd785e45b2020a]
+module.sandbox_vpc.aws_subnet.private_subnets[2]: Destroying... [id=subnet-07fcb6c305fa33b0a]
+module.sandbox_vpc.aws_route_table.lambda_function_rt[2]: Destroying... [id=rtb-0362cec7f5556310d]
+module.sandbox_vpc.aws_route_table.lambda_function_rt[1]: Destroying... [id=rtb-02e9141785aeddfcf]
+module.sandbox_vpc.aws_route_table_association.public_rta[2]: Destruction complete after 1s
+module.sandbox_vpc.aws_route_table.public_rt: Destroying... [id=rtb-02b07799aaf047581]
+module.sandbox_vpc.aws_subnet.private_subnets[0]: Destruction complete after 0s
+module.sandbox_vpc.aws_subnet.private_subnets[1]: Destruction complete after 0s
+module.sandbox_vpc.aws_subnet.private_subnets[2]: Destruction complete after 0s
+module.sandbox_vpc.aws_route_table.lambda_function_rt[2]: Destruction complete after 1s
+module.sandbox_vpc.aws_route_table.lambda_function_rt[0]: Destruction complete after 1s
+module.sandbox_vpc.aws_route_table.public_rt: Destruction complete after 1s
+module.sandbox_vpc.aws_internet_gateway.internet_gw: Destroying... [id=igw-08fa7029952030997]
+module.sandbox_vpc.aws_route_table.lambda_function_rt[1]: Destruction complete after 1s
+module.sandbox_vpc.aws_nat_gateway.nat_gw[0]: Destroying... [id=nat-09c8daa48d95fb7ab]
+module.sandbox_vpc.aws_nat_gateway.nat_gw[2]: Destroying... [id=nat-08269e03428c2fa2b]
+module.sandbox_vpc.aws_nat_gateway.nat_gw[1]: Destroying... [id=nat-0f1d1e8b3780a0007]
+module.sandbox_vpc.aws_internet_gateway.internet_gw: Still destroying... [id=igw-08fa7029952030997, 10s elapsed]
+module.sandbox_vpc.aws_nat_gateway.nat_gw[1]: Still destroying... [id=nat-0f1d1e8b3780a0007, 10s elapsed]
+module.sandbox_vpc.aws_nat_gateway.nat_gw[0]: Still destroying... [id=nat-09c8daa48d95fb7ab, 10s elapsed]
+module.sandbox_vpc.aws_nat_gateway.nat_gw[2]: Still destroying... [id=nat-08269e03428c2fa2b, 10s elapsed]
+module.sandbox_vpc.aws_internet_gateway.internet_gw: Still destroying... [id=igw-08fa7029952030997, 20s elapsed]
+module.sandbox_vpc.aws_nat_gateway.nat_gw[0]: Still destroying... [id=nat-09c8daa48d95fb7ab, 20s elapsed]
+module.sandbox_vpc.aws_nat_gateway.nat_gw[2]: Still destroying... [id=nat-08269e03428c2fa2b, 20s elapsed]
+module.sandbox_vpc.aws_nat_gateway.nat_gw[1]: Still destroying... [id=nat-0f1d1e8b3780a0007, 20s elapsed]
+module.sandbox_vpc.aws_internet_gateway.internet_gw: Still destroying... [id=igw-08fa7029952030997, 30s elapsed]
+module.sandbox_vpc.aws_nat_gateway.nat_gw[1]: Still destroying... [id=nat-0f1d1e8b3780a0007, 30s elapsed]
+module.sandbox_vpc.aws_nat_gateway.nat_gw[0]: Still destroying... [id=nat-09c8daa48d95fb7ab, 30s elapsed]
+module.sandbox_vpc.aws_nat_gateway.nat_gw[2]: Still destroying... [id=nat-08269e03428c2fa2b, 30s elapsed]
+module.sandbox_vpc.aws_internet_gateway.internet_gw: Still destroying... [id=igw-08fa7029952030997, 40s elapsed]
+module.sandbox_vpc.aws_nat_gateway.nat_gw[2]: Still destroying... [id=nat-08269e03428c2fa2b, 40s elapsed]
+module.sandbox_vpc.aws_nat_gateway.nat_gw[1]: Still destroying... [id=nat-0f1d1e8b3780a0007, 40s elapsed]
+module.sandbox_vpc.aws_nat_gateway.nat_gw[0]: Still destroying... [id=nat-09c8daa48d95fb7ab, 40s elapsed]
+module.sandbox_vpc.aws_internet_gateway.internet_gw: Still destroying... [id=igw-08fa7029952030997, 50s elapsed]
+module.sandbox_vpc.aws_nat_gateway.nat_gw[0]: Still destroying... [id=nat-09c8daa48d95fb7ab, 50s elapsed]
+module.sandbox_vpc.aws_nat_gateway.nat_gw[1]: Still destroying... [id=nat-0f1d1e8b3780a0007, 50s elapsed]
+module.sandbox_vpc.aws_nat_gateway.nat_gw[2]: Still destroying... [id=nat-08269e03428c2fa2b, 50s elapsed]
+module.sandbox_vpc.aws_nat_gateway.nat_gw[0]: Destruction complete after 51s
+module.sandbox_vpc.aws_nat_gateway.nat_gw[2]: Destruction complete after 51s
+module.sandbox_vpc.aws_internet_gateway.internet_gw: Still destroying... [id=igw-08fa7029952030997, 1m0s elapsed]
+module.sandbox_vpc.aws_nat_gateway.nat_gw[1]: Still destroying... [id=nat-0f1d1e8b3780a0007, 1m0s elapsed]
+module.sandbox_vpc.aws_internet_gateway.internet_gw: Destruction complete after 1m7s
+module.sandbox_vpc.aws_nat_gateway.nat_gw[1]: Still destroying... [id=nat-0f1d1e8b3780a0007, 1m10s elapsed]
+module.sandbox_vpc.aws_nat_gateway.nat_gw[1]: Destruction complete after 1m11s
+module.sandbox_vpc.aws_eip.nat_eip[1]: Destroying... [id=eipalloc-077302dc362286c97]
+module.sandbox_vpc.aws_eip.nat_eip[0]: Destroying... [id=eipalloc-06b5dbcaff1726f32]
+module.sandbox_vpc.aws_eip.nat_eip[2]: Destroying... [id=eipalloc-0477024d6497c0f00]
+module.sandbox_vpc.aws_eip.nat_eip[1]: Destruction complete after 1s
+module.sandbox_vpc.aws_eip.nat_eip[2]: Destruction complete after 1s
+module.sandbox_vpc.aws_eip.nat_eip[0]: Destruction complete after 1s
+module.sandbox_vpc.aws_subnet.public_subnets[1]: Destroying... [id=subnet-07a126d2cb62837f1]
+module.sandbox_vpc.aws_subnet.public_subnets[0]: Destroying... [id=subnet-0b5b6f81dc5445053]
+module.sandbox_vpc.aws_subnet.public_subnets[2]: Destroying... [id=subnet-0fafffdb517341fec]
+module.sandbox_vpc.aws_subnet.public_subnets[1]: Destruction complete after 1s
+module.sandbox_vpc.aws_subnet.public_subnets[0]: Destruction complete after 1s
+module.sandbox_vpc.aws_subnet.public_subnets[2]: Destruction complete after 1s
+module.sandbox_vpc.aws_vpc.application_vpc: Destroying... [id=vpc-029a284863707e0bd]
+module.sandbox_vpc.aws_vpc.application_vpc: Destruction complete after 1s
+
+Destroy complete! Resources: 24 destroyed.
