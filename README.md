@@ -6,12 +6,17 @@ To rerun it for yourself:
 Pre-requesites:
 
 1- AWS account with access configured to use terraform.
+
 2- AWS CLI installed
+
 3- Terraform installed locally
 
 To use the sample module:
+
 1- Run "terraform init" command
+
 2- Run "terraform plan" command
+
 3- Run "terraform apply", then enter "yes" when prompted
 
 This will create the resources from the VPC module.
