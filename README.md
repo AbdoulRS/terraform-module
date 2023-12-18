@@ -13,11 +13,13 @@ Pre-requesites:
 
 To use the sample module:
 
-1- Run "terraform init" command
+1- Navigate to the sandbox folder by running "cd sandbox"
 
-2- Run "terraform plan" command
+2- Run "terraform init" command
 
-3- Run "terraform apply", then enter "yes" when prompted
+3- Run "terraform plan" command
+
+4- Run "terraform apply", then enter "yes" when prompted
 
 This will create the resources from the VPC module.
 
